@@ -62,10 +62,18 @@ public class Library {
     public long createRandomNumber() {
         long randomNumber;
         do {
-            randomNumber = (long)(Math.random()*100 + 1);
+            randomNumber = (long) (Math.random() * 100 + 1);
             idList.add(randomNumber);
         } while (!(idList.contains(randomNumber)));
         return randomNumber;
+    }
+
+    public void getAvailableBooks() {
+        for (BaseBook book : bookList) {
+            if (book.getStatus().equals(EBookStatus.AVAILABLE)) {
+                System.out.println(book);
+            }
+        }
     }
 
     public void createMember(String nameSurname) {
@@ -74,11 +82,35 @@ public class Library {
         newMember.setMemberId(memberId);
         newMember.setNameSurname(nameSurname);
         memberList.add(newMember);
+        System.out.println("New member added: " + newMember.getNameSurname() + " ID: " + memberId);
     }
 
     public void rentBook(long bookId, long memberId) {
-        for (BaseBook book: bookList) {
-
+        Member searchedMember = null;
+        BaseBook searchedBook = null;
+        for (Member member : memberList) {
+            if (member.getMemberId() == memberId) {
+                searchedMember = member;
+                for (BaseBook book : bookList) {
+                    if (book.getBookId() == bookId) {
+                        if (book.getStatus().equals(EBookStatus.AVAILABLE)) {
+                            searchedMember.getRentedBookList().add(book);
+                            searchedBook = book;
+                            book.setStatus(EBookStatus.RENTED);
+                            System.out.println(book.getTitle() + " book is rented to member: " + searchedMember.getNameSurname());
+                        } else {
+                            System.out.println("Sorry, this book is not available!");
+                        }
+                    }
+                }
+                if (searchedBook == null) {
+                    System.out.println("Book not found with this ID!");
+                    break;
+                }
+            }
+        }
+        if(searchedMember == null) {
+            System.out.println("Member not found with this ID!");
         }
     }
 }

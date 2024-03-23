@@ -1,15 +1,15 @@
 package com.sinem.repository.entity;
 
 public class BookHistory extends BaseBook{
-    private EBookStatus status;
-
-    public EBookStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EBookStatus status) {
-        this.status = status;
-    }
+//    private EBookStatus status;
+//
+//    public EBookStatus getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(EBookStatus status) {
+//        this.status = status;
+//    }
 
     @Override
     public String toString() {

@@ -28,6 +28,14 @@ public class Member implements IMember{
         this.nameSurname = nameSurname;
     }
 
+    public List<BaseBook> getRentedBookList() {
+        return rentedBookList;
+    }
+
+    public void setRentedBookList(List<BaseBook> rentedBookList) {
+        this.rentedBookList = rentedBookList;
+    }
+
     @Override
     public String toString() {
         return "Member ID: " + memberId +

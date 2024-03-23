@@ -6,6 +6,15 @@ abstract class BaseBook {
     private String title;
     private String writer;
     private long publicationDate;
+    private EBookStatus status;
+
+    public EBookStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(EBookStatus status) {
+        this.status = status;
+    }
 
     public long getBookId() {
         return bookId;
