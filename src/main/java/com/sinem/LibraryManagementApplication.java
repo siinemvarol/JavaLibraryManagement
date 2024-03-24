@@ -113,6 +113,9 @@ public class LibraryManagementApplication {
                     library.returnBook(returnBookId, returnMemberId);
                     break;
                 case 10:
+                    System.out.println("Enter member ID: ");
+                    long rentedBooksMemberId = Long.valueOf(scanner.nextLine());
+                    library.getRentedBooks(rentedBooksMemberId);
                     break;
                 case 0:
                     System.out.println("See you soon!");

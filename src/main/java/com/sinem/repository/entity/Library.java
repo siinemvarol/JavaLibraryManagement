@@ -145,4 +145,25 @@ public class Library {
             System.out.println("Member not found with this ID!");
         }
     }
+
+    public void getRentedBooks(long memberId) {
+        Member searchedMember = null;
+        BaseBook rentedBook = null;
+        for(Member member : memberList) {
+            if(member.getMemberId() == memberId) {
+                searchedMember = member;
+                List<BaseBook> rentedBookList = searchedMember.getRentedBookList();
+                for(BaseBook book : rentedBookList) {
+                    rentedBook = book;
+                    System.out.println(book);
+                }
+                if(rentedBook == null) {
+                    System.out.println("Rented book not found with this member ID!");
+                }
+            }
+        }
+        if(searchedMember == null) {
+            System.out.println("Member not found with this ID!");
+        }
+    }
 }
