@@ -2,6 +2,7 @@ package com.sinem.repository.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Library {
 
@@ -59,15 +60,50 @@ public class Library {
         bookList.add(newBookHistory);
     }
 
+    public void updateBookStatus(long updatedBookId, String updatedBookStatus) {
+        BaseBook rentedBook = null;
+        for (BaseBook book : bookList) {
+            if (book.getBookId() == updatedBookId) {
+                rentedBook = book;
+                if (updatedBookStatus.equals("AVAILABLE") || updatedBookStatus.equals("UNAVAILABLE")) {
+                    if (EBookStatus.valueOf(updatedBookStatus).equals(EBookStatus.AVAILABLE)) {
+                        if (book.getStatus().equals(EBookStatus.AVAILABLE)) {
+                            System.out.println("Status of book is already " + EBookStatus.AVAILABLE + "!");
+                        } else {
+                            book.setStatus(EBookStatus.AVAILABLE);
+                            System.out.println("Status of book is set to " + EBookStatus.AVAILABLE);
+                            break;
+                        }
+                    } else if (EBookStatus.valueOf(updatedBookStatus).equals(EBookStatus.UNAVAILABLE)) {
+                        if (book.getStatus().equals(EBookStatus.UNAVAILABLE)) {
+                            System.out.println("Status of book is already " + EBookStatus.UNAVAILABLE + "!");
+                        } else {
+                            book.setStatus(EBookStatus.UNAVAILABLE);
+                            System.out.println("Status of book is set to " + EBookStatus.UNAVAILABLE);
+                            break;
+                        }
+                    }
+                } else {
+                    System.out.println("Entered status is not valid!");
+                    break;
+                }
+
+            }
+        }
+        if (rentedBook == null) {
+            System.out.println("No book found with this ID!");
+        }
+    }
+
     public void getAllRentedBooks() {
         BaseBook rentedBook = null;
         for (BaseBook book : bookList) {
-            if(book.getStatus().equals(EBookStatus.RENTED)) {
+            if (book.getStatus().equals(EBookStatus.RENTED)) {
                 rentedBook = book;
                 System.out.println(book);
             }
         }
-        if(rentedBook == null) {
+        if (rentedBook == null) {
             System.out.println("No rented books found!");
         }
     }
@@ -122,7 +158,7 @@ public class Library {
                 }
             }
         }
-        if(searchedMember == null) {
+        if (searchedMember == null) {
             System.out.println("Member not found with this ID!");
         }
     }
@@ -130,14 +166,14 @@ public class Library {
     public void returnBook(long bookId, long memberId) {
         Member searchedMember = null;
         BaseBook searchedBook = null;
-        for(Member member : memberList) {
-            if(member.getMemberId() == memberId) {
+        for (Member member : memberList) {
+            if (member.getMemberId() == memberId) {
                 searchedMember = member;
                 List<BaseBook> rentedBookList = searchedMember.getRentedBookList();
                 System.out.println("rented book list is: " + rentedBookList);
-                for(BaseBook book : rentedBookList) {
-                    if(book.getBookId() == bookId) {
-                        if(book.getStatus().equals(EBookStatus.RENTED)) {
+                for (BaseBook book : rentedBookList) {
+                    if (book.getBookId() == bookId) {
+                        if (book.getStatus().equals(EBookStatus.RENTED)) {
                             searchedBook = book;
                             searchedMember.getRentedBookList().remove(book);
                             book.setStatus(EBookStatus.AVAILABLE);
@@ -154,7 +190,7 @@ public class Library {
                 }
             }
         }
-        if(searchedMember == null) {
+        if (searchedMember == null) {
             System.out.println("Member not found with this ID!");
         }
     }
@@ -162,20 +198,20 @@ public class Library {
     public void getRentedBooks(long memberId) {
         Member searchedMember = null;
         BaseBook rentedBook = null;
-        for(Member member : memberList) {
-            if(member.getMemberId() == memberId) {
+        for (Member member : memberList) {
+            if (member.getMemberId() == memberId) {
                 searchedMember = member;
                 List<BaseBook> rentedBookList = searchedMember.getRentedBookList();
-                for(BaseBook book : rentedBookList) {
+                for (BaseBook book : rentedBookList) {
                     rentedBook = book;
                     System.out.println(book);
                 }
-                if(rentedBook == null) {
+                if (rentedBook == null) {
                     System.out.println("Rented book not found with this member ID!");
                 }
             }
         }
-        if(searchedMember == null) {
+        if (searchedMember == null) {
             System.out.println("Member not found with this ID!");
         }
     }

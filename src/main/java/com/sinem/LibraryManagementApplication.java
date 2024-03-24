@@ -5,6 +5,7 @@ import com.sinem.repository.entity.EBookStatus;
 import com.sinem.repository.entity.Library;
 import com.sinem.repository.entity.Member;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class LibraryManagementApplication {
@@ -16,13 +17,14 @@ public class LibraryManagementApplication {
         System.out.println("1 - Add new science book");
         System.out.println("2 - Add new novel");
         System.out.println("3 - Add new history book");
-        System.out.println("4 - Show all rented books");
-        System.out.println("5 - Show all books");
-        System.out.println("6 - Create a new member");
-        System.out.println("7 - Show all members");
-        System.out.println("8 - Rent a book");
-        System.out.println("9 - Return a book");
-        System.out.println("10 - Show rented books of a member");
+        System.out.println("4 - Update book status");
+        System.out.println("5 - Show all rented books");
+        System.out.println("6 - Show all books");
+        System.out.println("7 - Create a new member");
+        System.out.println("8 - Show all members");
+        System.out.println("9 - Rent a book");
+        System.out.println("10 - Return a book");
+        System.out.println("11 - Show rented books of a member");
         System.out.println("0 - Exit program");
     }
 
@@ -83,22 +85,35 @@ public class LibraryManagementApplication {
                     library.createBookScience(historyISBN, historyTitle, historyWriter, historyPublicationDate);
                     break;
                 case 4:
-                    library.getAllRentedBooks();
+                    System.out.println("Enter book ID: ");
+                    long updatedBookId = Long.valueOf(scanner.nextLine());
+                    System.out.println("Enter new status: (AVAILABLE, RENTED, UNAVAILABLE)");
+                    String updatedBookStatus = scanner.nextLine();
+                    if (updatedBookStatus.equals("RENTED")) {
+                        System.out.println("Enter member ID: ");
+                        long rentalMemberId = Long.valueOf(scanner.nextLine());
+                        library.rentBook(updatedBookId, rentalMemberId);
+                    } else {
+                        library.updateBookStatus(updatedBookId, updatedBookStatus);
+                    }
                     break;
                 case 5:
-                    System.out.println(library.getBookList());
+                    library.getAllRentedBooks();
                     break;
                 case 6:
+                    System.out.println(library.getBookList());
+                    break;
+                case 7:
                     System.out.println("Enter name and surname: ");
                     String memberNameSurname = scanner.nextLine();
                     library.createMember(memberNameSurname);
                     break;
-                case 7:
+                case 8:
                     for (Member currentMember : library.getMemberList()) {
                         System.out.println(currentMember.toString());
                     }
                     break;
-                case 8:
+                case 9:
                     library.getAvailableBooks();
                     System.out.println("Enter book ID: ");
                     long rentalBookId = Long.valueOf(scanner.nextLine());
@@ -106,14 +121,14 @@ public class LibraryManagementApplication {
                     long rentalMemberId = Long.valueOf(scanner.nextLine());
                     library.rentBook(rentalBookId, rentalMemberId);
                     break;
-                case 9:
+                case 10:
                     System.out.println("Enter book ID: ");
                     long returnBookId = Long.valueOf(scanner.nextLine());
                     System.out.println("Enter member ID: ");
                     long returnMemberId = Long.valueOf(scanner.nextLine());
                     library.returnBook(returnBookId, returnMemberId);
                     break;
-                case 10:
+                case 11:
                     System.out.println("Enter member ID: ");
                     long rentedBooksMemberId = Long.valueOf(scanner.nextLine());
                     library.getRentedBooks(rentedBooksMemberId);

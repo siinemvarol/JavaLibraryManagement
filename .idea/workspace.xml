@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a12fbd-5077-4a5c-b6b6-f1cc982f3a37" name="Changes" comment="Showing rented books of a member feature is added">
+    <list default="true" id="b2a12fbd-5077-4a5c-b6b6-f1cc982f3a37" name="Changes" comment="Showing all rented books feature is added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/LibraryManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/LibraryManagementApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/Library.java" afterDir="false" />
     </list>
@@ -89,7 +90,8 @@
       <workItem from="1711057155637" duration="3877000" />
       <workItem from="1711114702957" duration="17398000" />
       <workItem from="1711203096646" duration="8232000" />
-      <workItem from="1711278131641" duration="2051000" />
+      <workItem from="1711278131641" duration="4184000" />
+      <workItem from="1711297649547" duration="2985000" />
     </task>
     <task id="LOCAL-00001" summary="Project and entities created">
       <created>1711060548205</created>
@@ -126,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711279834309</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Showing all rented books feature is added">
+      <created>1711280226054</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711280226054</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +147,7 @@
     <MESSAGE value="Renting a book feature is added, menu is updated" />
     <MESSAGE value="Returning a book feature is added" />
     <MESSAGE value="Showing rented books of a member feature is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Showing rented books of a member feature is added" />
+    <MESSAGE value="Showing all rented books feature is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Showing all rented books feature is added" />
   </component>
 </project>
