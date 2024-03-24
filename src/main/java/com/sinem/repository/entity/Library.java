@@ -59,6 +59,19 @@ public class Library {
         bookList.add(newBookHistory);
     }
 
+    public void getAllRentedBooks() {
+        BaseBook rentedBook = null;
+        for (BaseBook book : bookList) {
+            if(book.getStatus().equals(EBookStatus.RENTED)) {
+                rentedBook = book;
+                System.out.println(book);
+            }
+        }
+        if(rentedBook == null) {
+            System.out.println("No rented books found!");
+        }
+    }
+
     public long createRandomNumber() {
         long randomNumber;
         do {

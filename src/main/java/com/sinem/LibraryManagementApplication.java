@@ -16,7 +16,7 @@ public class LibraryManagementApplication {
         System.out.println("1 - Add new science book");
         System.out.println("2 - Add new novel");
         System.out.println("3 - Add new history book");
-        System.out.println("4 - Update book status");
+        System.out.println("4 - Show all rented books");
         System.out.println("5 - Show all books");
         System.out.println("6 - Create a new member");
         System.out.println("7 - Show all members");
@@ -83,6 +83,7 @@ public class LibraryManagementApplication {
                     library.createBookScience(historyISBN, historyTitle, historyWriter, historyPublicationDate);
                     break;
                 case 4:
+                    library.getAllRentedBooks();
                     break;
                 case 5:
                     System.out.println(library.getBookList());
