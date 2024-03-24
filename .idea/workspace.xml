@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a12fbd-5077-4a5c-b6b6-f1cc982f3a37" name="Changes" comment="Library menu created, adding a new book for each category feature added, adding a new member feature added, showing all books and all members features added">
+    <list default="true" id="b2a12fbd-5077-4a5c-b6b6-f1cc982f3a37" name="Changes" comment="Returning a book feature is added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/LibraryManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/LibraryManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/BaseBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/BaseBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/BookNovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/BookNovel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sinem/repository/entity/Member.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,20 +39,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/JavaLibraryManagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JavaLibraryManagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sinem.repository.entity" />
@@ -92,7 +89,8 @@
       <updated>1711057154086</updated>
       <workItem from="1711057155637" duration="3877000" />
       <workItem from="1711114702957" duration="17398000" />
-      <workItem from="1711203096646" duration="6136000" />
+      <workItem from="1711203096646" duration="8232000" />
+      <workItem from="1711278131641" duration="684000" />
     </task>
     <task id="LOCAL-00001" summary="Project and entities created">
       <created>1711060548205</created>
@@ -108,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711141946748</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Renting a book feature is added, menu is updated">
+      <created>1711210174347</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711210174347</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project and entities created" />
     <MESSAGE value="Library menu created, adding a new book for each category feature added, adding a new member feature added, showing all books and all members features added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Library menu created, adding a new book for each category feature added, adding a new member feature added, showing all books and all members features added" />
+    <MESSAGE value="Renting a book feature is added, menu is updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renting a book feature is added, menu is updated" />
   </component>
 </project>

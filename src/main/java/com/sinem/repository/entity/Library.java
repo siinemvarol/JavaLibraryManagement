@@ -113,4 +113,36 @@ public class Library {
             System.out.println("Member not found with this ID!");
         }
     }
+
+    public void returnBook(long bookId, long memberId) {
+        Member searchedMember = null;
+        BaseBook searchedBook = null;
+        for(Member member : memberList) {
+            if(member.getMemberId() == memberId) {
+                searchedMember = member;
+                List<BaseBook> rentedBookList = searchedMember.getRentedBookList();
+                System.out.println("rented book list is: " + rentedBookList);
+                for(BaseBook book : rentedBookList) {
+                    if(book.getBookId() == bookId) {
+                        if(book.getStatus().equals(EBookStatus.RENTED)) {
+                            searchedBook = book;
+                            searchedMember.getRentedBookList().remove(book);
+                            book.setStatus(EBookStatus.AVAILABLE);
+                            System.out.println(book.getTitle() + "book is returned by member: " + searchedMember.getNameSurname());
+                            break;
+                        } else {
+                            System.out.println("Book " + book.getTitle() + " is not rented by member " + searchedMember.getNameSurname());
+                        }
+                    }
+                }
+                if (searchedBook == null) {
+                    System.out.println("Book not found with this ID!");
+                    break;
+                }
+            }
+        }
+        if(searchedMember == null) {
+            System.out.println("Member not found with this ID!");
+        }
+    }
 }
